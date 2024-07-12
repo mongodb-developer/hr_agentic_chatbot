@@ -1,24 +1,26 @@
 # HR Agentic Chatbot
 
-This project implements an HR Chatbot using LangChain, MongoDB, and OpenAI's language models. It includes synthetic data generation, embedding creation, and a chatbot interface for querying HR-related information.
+This project implements an HR Chatbot using LangChain, MongoDB, OpenAI's language models, and Google APIs. It includes synthetic data generation, embedding creation, and a chatbot interface for querying HR-related information and interacting with Google services.
 
 ## Table of Contents
 
 1. [Prerequisites](#prerequisites)
 2. [Installation](#installation)
 3. [Configuration](#configuration)
-4. [Synthetic Data Generation](#synthetic-data-generation)
-5. [Data Ingestion and Embedding Generation](#data-ingestion-and-embedding-generation)
-6. [Running the Chatbot](#running-the-chatbot)
-7. [Project Structure](#project-structure)
-8. [Contributing](#contributing)
-9. [License](#license)
+4. [Google API Setup](#google-api-setup)
+5. [Synthetic Data Generation](#synthetic-data-generation)
+6. [Data Ingestion and Embedding Generation](#data-ingestion-and-embedding-generation)
+7. [Running the Chatbot](#running-the-chatbot)
+8. [Project Structure](#project-structure)
+9. [Contributing](#contributing)
+10. [License](#license)
 
 ## Prerequisites
 
 - Python 3.8+
 - MongoDB
 - OpenAI API key
+- Google Cloud Platform account
 - Git (for version control)
 
 ## Installation
@@ -50,6 +52,27 @@ This project implements an HR Chatbot using LangChain, MongoDB, and OpenAI's lan
 
 2. Replace `your_mongodb_connection_string` with your actual MongoDB connection string and `your_openai_api_key` with your OpenAI API key.
 
+## Google API Setup
+
+1. Go to the [Google Cloud Console](https://console.cloud.google.com/).
+2. Create a new project or select an existing one.
+3. Enable the following APIs for your project:
+   - Google Drive API
+   - Google Docs API
+   - Gmail API
+4. Create credentials (OAuth 2.0 Client ID) for a Desktop application:
+   - Go to "Credentials" in the left sidebar.
+   - Click "Create Credentials" and select "OAuth client ID".
+   - Choose "Desktop app" as the application type.
+   - Download the client configuration file and rename it to `credentials.json`.
+   - Place `credentials.json` in the root directory of the project.
+5. The first time you run the application, it will prompt you to authorize access:
+   - A browser window will open asking you to log in to your Google account.
+   - Grant the requested permissions.
+   - The application will then create a `token.json` file in the project root.
+
+Note: Keep `credentials.json` and `token.json` secure and do not share them publicly.
+
 ## Synthetic Data Generation
 
 To generate synthetic data for companies, workforce, and employees:
@@ -74,7 +97,7 @@ To ingest the synthetic data into MongoDB and generate embeddings for employees:
 
 2. Run the data ingestion script:
    ```bash
-   python ingestion.py
+   python data/ingestion.py
    ```
 
 This script will:
@@ -90,7 +113,7 @@ To start the HR Chatbot:
 
 2. Run the main script:
    ```bash
-   chainlit run app.py -w
+   chainlit run app.py
    ```
 
 3. Open your web browser and navigate to the URL provided in the terminal (usually `http://localhost:8000`).
@@ -127,13 +150,13 @@ HR_AGENTIC_CHATBOT/
 ├── app.py
 ├── chainlit.md
 ├── config.py
-├── credentials.json
+├── credentials.json  # Google OAuth 2.0 credentials
 ├── db_utils.py
 ├── graph.py
 ├── README.md
 ├── requirements.txt
 ├── temp.py
-├── token.json
+├── token.json  # Generated after first Google auth
 └── utilities.py
 ```
 

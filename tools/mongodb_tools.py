@@ -30,7 +30,7 @@ vector_store_companies = MongoDBAtlasVectorSearch.from_connection_string(
     namespace=f"{DATABASE_NAME}.{COMPANY_COLLECTION_NAME}",
     embedding=embedding_model,
     index_name=ATLAS_VECTOR_SEARCH_INDEX,
-    text_key="employee_string"
+    text_key="description"
 )
 
 vector_store_workforce = MongoDBAtlasVectorSearch.from_connection_string(

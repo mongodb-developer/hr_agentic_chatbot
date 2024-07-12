@@ -8,10 +8,10 @@ from config import DATABASE_NAME, MONGO_URI
 from tools.mongodb_tools import tools
 from agent import create_agent
 from graph import create_workflow, AgentState
-from mongodb.connect import get_mongo_client, get_session_history
+from mongodb.connect import get_mongo_client
 from mongodb import checkpointer
 from motor.motor_asyncio import AsyncIOMotorClient
-from langchain_core.messages import HumanMessage
+from langchain_core.messages import HumanMessage, AIMessage
 from utilities import sanitize_name
 from langchain.schema.runnable import Runnable
 
@@ -54,41 +54,28 @@ async def on_chat_start():
 @cl.on_message
 async def on_message(message: cl.Message):
     try:
-        # Retrieve the graph and state from the user session
         graph: Runnable = cl.user_session.get("graph")
         state = cl.user_session.get("state")
 
-        # Create a new state with only the most recent user message
-        new_state = AgentState(messages=[HumanMessage(content=message.content, name=sanitize_name("Human"))])
+        state["messages"] += [HumanMessage(content=message.content, name=sanitize_name("Human"))]
 
-        # Stream the response to the UI
         ui_message = cl.Message(content="")
         await ui_message.send()
-        config = {"configurable": {"thread_id": "0"}}
+        config = {"configurable": {"thread_id": "20"}}
 
-        async for event in graph.astream_events(new_state, config, version="v1"):
+        async for event in graph.astream_events(state, config, version="v1"):
             if event["event"] == "on_chat_model_stream":
-                chunk = event["data"]["chunk"]
-                if isinstance(chunk.content, list):
-                    for content_item in chunk.content:
-                        if isinstance(content_item, dict) and 'text' in content_item:
-                            await ui_message.stream_token(token=content_item['text'])
-                else:
-                    await ui_message.stream_token(token=chunk.content or "")
+                content = event["data"]["chunk"].content or ""
+                await ui_message.stream_token(token=content)
             elif event["event"] == "on_tool_start":
-                print(event)
                 tool_name = event.get("name", "Unknown Tool")
                 tool_input = event["data"].get("input", "No input provided")
                 async with cl.Step(name=f"Using Tool: {tool_name}", type="tool") as step:
                     step.input = tool_input
 
-        # Update the state with the new message and response
-        state["messages"].append(new_state["messages"][0])  # Add user message
-        state["messages"].extend(new_state.get("messages", [])[1:])  # Add AI response if any
 
-        # Update the state in the user session
         cl.user_session.set("state", state)
         await ui_message.update()
     except Exception as e:
         print(f"An error occurred: {e}")
-        await cl.Message(content=f"I'm sorry, but an error occurred. Please try again later.").send()
+        await cl.Message(content="I'm sorry, but an error occurred. Please try again.").send()
