@@ -1,0 +1,184 @@
+import random
+from faker import Faker
+import json
+import os
+
+fake = Faker()
+
+job_titles = [
+    # Technical and Business
+    "Software Engineer", "Data Scientist", "Project Manager", 
+    "Product Manager", "Sales Associate", "Customer Service Representative",
+    "Marketing Specialist", "Business Analyst", "Graphic Designer",
+    # Medical
+    "Nurse", "Doctor", "Pharmacist", "Lab Technician", "Radiologist",
+    "Physical Therapist", "Medical Assistant", "Paramedic",
+    # Grocery Store
+    "Cashier", "Stock Clerk", "Produce Manager", "Butcher", "Bakery Clerk",
+    "Deli Clerk", "Grocery Manager", "Customer Service Associate"
+]
+
+departments = [
+    "IT", "Engineering", "Data Science", "Product", "Project Management", "Design",
+    "Quality Assurance", "Operations", "Executive"
+]
+
+# Define a list of office locations
+office_locations = [
+    "Chicago Office", "New York Office", "London Office", "Berlin Office", "Tokyo Office",
+    "Sydney Office", "Toronto Office", "San Francisco Office", "Paris Office", "Singapore Office"
+]
+
+
+def generate_company_data(num_companies=10):
+    companies = []
+    for _ in range(num_companies):
+        company = {
+            "company_name": fake.company(),
+            "pay": f"£{random.randint(15, 40)} per hour",
+            "opening_hours": {
+                "open": "9:00am",
+                "close": f"{random.randint(8, 12)}:00pm"
+            },
+            "description": fake.catch_phrase(),
+            "address": fake.address()
+        }
+        companies.append(company)
+    return companies
+
+def generate_workforce_data(num_workers=50):
+    workforce = []
+    for _ in range(num_workers):
+        availability_time = {
+            "start": "9:00am",
+            "close": "6:00pm"
+        }
+        availability_day = {
+            day: availability_time for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        }
+        worker = {
+            "first_name": fake.first_name(),
+            "last_name": fake.last_name(),
+            "job_title": random.choice(job_titles),
+            "email": fake.email(),
+            "phone_number": fake.phone_number(),
+            "availability_time": availability_time,
+            "availability_day": availability_day,
+            "address": fake.address()
+        }
+        workforce.append(worker)
+    return workforce
+
+# Define a function to create a random employee entry
+def generate_create_employee(employee_id, first_name, last_name, job_title, department, manager_id=None):
+    return {
+        "employee_id": employee_id,
+        "first_name": first_name,
+        "last_name": last_name,
+        "gender": random.choice(["Male", "Female"]),
+        "date_of_birth": f"{random.randint(1950, 2000)}-{random.randint(1, 12):02}-{random.randint(1, 28):02}",
+        "address": {
+            "street": f"{random.randint(100, 999)} Main Street",
+            "city": "Springfield",
+            "state": "IL",
+            "postal_code": "62704",
+            "country": "USA"
+        },
+        "contact_details": {
+            "email": f"{first_name.lower()}.{last_name.lower()}@example.com",
+            "phone_number": f"+1-555-{random.randint(100, 999)}-{random.randint(1000, 9999)}"
+        },
+        "job_details": {
+            "job_title": job_title,
+            "department": department,
+            "hire_date": f"{random.randint(2000, 2022)}-{random.randint(1, 12):02}-{random.randint(1, 28):02}",
+            "employment_type": "Full-Time",
+            "salary": random.randint(50000, 250000),
+            "currency": "USD"
+        },
+        "work_location": {
+            "nearest_office": random.choice(office_locations),
+            "is_remote": random.choice([True, False])
+        },
+        "reporting_manager": manager_id,
+        "skills": random.sample(
+            ["JavaScript", "Python", "Node.js", "React", "Django", "Flask", "AWS", "Docker", "Kubernetes", "SQL"], 4
+        ),
+        "performance_reviews": [
+            {
+                "review_date": f"{random.randint(2020, 2023)}-{random.randint(1, 12):02}-{random.randint(1, 28):02}",
+                "rating": round(random.uniform(3, 5), 1),
+                "comments": random.choice([
+                    "Exceeded expectations in the last project.",
+                    "Consistently meets performance standards.",
+                    "Needs improvement in time management.",
+                    "Outstanding performance and dedication."
+                ])
+            },
+            {
+                "review_date": f"{random.randint(2019, 2022)}-{random.randint(1, 12):02}-{random.randint(1, 28):02}",
+                "rating": round(random.uniform(3, 5), 1),
+                "comments": random.choice([
+                    "Exceeded expectations in the last project.",
+                    "Consistently meets performance standards.",
+                    "Needs improvement in time management.",
+                    "Outstanding performance and dedication."
+                ])
+            }
+        ],
+        "benefits": {
+            "health_insurance": random.choice(["Gold Plan", "Silver Plan", "Bronze Plan"]),
+            "retirement_plan": "401K",
+            "paid_time_off": random.randint(15, 30)
+        },
+        "emergency_contact": {
+            "name": f"{random.choice(['Jane', 'Emily', 'Michael', 'Robert'])} {random.choice(['Doe', 'Smith', 'Johnson'])}",
+            "relationship": random.choice(["Spouse", "Parent", "Sibling", "Friend"]),
+            "phone_number": f"+1-555-{random.randint(100, 999)}-{random.randint(1000, 9999)}"
+        },
+        "notes": random.choice([
+            "Promoted to Senior Software Engineer in 2020.",
+            "Completed leadership training in 2021.",
+            "Received Employee of the Month award in 2022.",
+            "Actively involved in company hackathons and innovation challenges."
+        ])
+    }
+
+# Generate 10 employee entries
+employees_data = [
+    generate_create_employee("E123456", "John", "Doe", "Software Engineer", "IT", "M987654"),
+    generate_create_employee("E123457", "Jane", "Doe", "Senior Software Engineer", "IT", "M987654"),
+    generate_create_employee("E123458", "Emily", "Smith", "Data Scientist", "Data Science", "M987655"),
+    generate_create_employee("E123459", "Michael", "Brown", "Product Manager", "Product", "M987656"),
+    generate_create_employee("E123460", "Sarah", "Davis", "Project Manager", "Project Management", "M987657"),
+    generate_create_employee("E123461", "Robert", "Johnson", "UX Designer", "Design", "M987658"),
+    generate_create_employee("E123462", "David", "Wilson", "QA Engineer", "Quality Assurance", "M987659"),
+    generate_create_employee("E123463", "Chris", "Lee", "DevOps Engineer", "Operations", "M987660"),
+    generate_create_employee("E123464", "Sophia", "Garcia", "CTO", "Executive", None),
+    generate_create_employee("E123465", "Olivia", "Martinez", "CEO", "Executive", None)
+]
+
+
+# Generate company and workforce datasets
+companies_data = generate_company_data()
+workforce_data = generate_workforce_data()
+
+# Convert datasets to JSON format
+companies_json = json.dumps(companies_data, indent=4)
+workforce_json = json.dumps(workforce_data, indent=4)
+employees_json = json.dumps(employees_data, indent=4)
+
+# Create 'data' directory if it doesn't exist
+os.makedirs('data', exist_ok=True)
+
+# Save to separate files in 'data' directory
+with open('data/companies.json', 'w') as f:
+    f.write(companies_json)
+
+with open('data/workforce.json', 'w') as f:
+    f.write(workforce_json)
+
+with open('data/employees.json', 'w') as f:
+    f.write(employees_json)
+
+print("Datasets generated and saved to data/companies.json and data/workforce.json")

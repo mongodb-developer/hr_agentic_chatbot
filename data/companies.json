@@ -1,0 +1,102 @@
+[
+    {
+        "company_name": "Waters-Jensen",
+        "pay": "\u00a338 per hour",
+        "opening_hours": {
+            "open": "9:00am",
+            "close": "12:00pm"
+        },
+        "description": "Robust scalable open architecture",
+        "address": "170 Stacey Prairie Suite 852\nJackville, MP 83323"
+    },
+    {
+        "company_name": "Brown LLC",
+        "pay": "\u00a327 per hour",
+        "opening_hours": {
+            "open": "9:00am",
+            "close": "12:00pm"
+        },
+        "description": "Managed bi-directional methodology",
+        "address": "884 John Fords Suite 081\nDiaztown, MP 08145"
+    },
+    {
+        "company_name": "Martin, Payne and Mcgee",
+        "pay": "\u00a325 per hour",
+        "opening_hours": {
+            "open": "9:00am",
+            "close": "9:00pm"
+        },
+        "description": "User-friendly full-range leverage",
+        "address": "18677 Samuel Ford Apt. 032\nBrianhaven, OK 29350"
+    },
+    {
+        "company_name": "Adams-Arias",
+        "pay": "\u00a329 per hour",
+        "opening_hours": {
+            "open": "9:00am",
+            "close": "9:00pm"
+        },
+        "description": "Enhanced static hub",
+        "address": "834 Olsen Road\nSouth Edward, MD 59126"
+    },
+    {
+        "company_name": "Serrano LLC",
+        "pay": "\u00a327 per hour",
+        "opening_hours": {
+            "open": "9:00am",
+            "close": "8:00pm"
+        },
+        "description": "De-engineered eco-centric approach",
+        "address": "590 James Glens\nTimothytown, NC 54627"
+    },
+    {
+        "company_name": "Reyes, Bauer and Hancock",
+        "pay": "\u00a318 per hour",
+        "opening_hours": {
+            "open": "9:00am",
+            "close": "11:00pm"
+        },
+        "description": "Universal maximized capacity",
+        "address": "9675 Ryan Land Apt. 433\nEast Harryberg, OH 63736"
+    },
+    {
+        "company_name": "Beck-Lewis",
+        "pay": "\u00a322 per hour",
+        "opening_hours": {
+            "open": "9:00am",
+            "close": "11:00pm"
+        },
+        "description": "Cross-platform empowering emulation",
+        "address": "593 Kathryn Center\nAlexiston, AL 28983"
+    },
+    {
+        "company_name": "Garcia-Carter",
+        "pay": "\u00a329 per hour",
+        "opening_hours": {
+            "open": "9:00am",
+            "close": "10:00pm"
+        },
+        "description": "Managed next generation model",
+        "address": "7963 Jones Port Suite 844\nSouth Josephchester, IN 87219"
+    },
+    {
+        "company_name": "Bishop-Ortiz",
+        "pay": "\u00a328 per hour",
+        "opening_hours": {
+            "open": "9:00am",
+            "close": "11:00pm"
+        },
+        "description": "Multi-channeled heuristic pricing structure",
+        "address": "80381 Pennington Tunnel\nJustinshire, WI 06041"
+    },
+    {
+        "company_name": "Lopez-Mckay",
+        "pay": "\u00a331 per hour",
+        "opening_hours": {
+            "open": "9:00am",
+            "close": "12:00pm"
+        },
+        "description": "Persistent executive array",
+        "address": "329 Hogan Stream Apt. 078\nErinmouth, IN 15705"
+    }
+]

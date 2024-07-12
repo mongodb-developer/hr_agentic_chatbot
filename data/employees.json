@@ -1,0 +1,602 @@
+[
+    {
+        "employee_id": "E123456",
+        "first_name": "John",
+        "last_name": "Doe",
+        "gender": "Male",
+        "date_of_birth": "1998-02-16",
+        "address": {
+            "street": "341 Main Street",
+            "city": "Springfield",
+            "state": "IL",
+            "postal_code": "62704",
+            "country": "USA"
+        },
+        "contact_details": {
+            "email": "john.doe@example.com",
+            "phone_number": "+1-555-497-6958"
+        },
+        "job_details": {
+            "job_title": "Software Engineer",
+            "department": "IT",
+            "hire_date": "2015-10-01",
+            "employment_type": "Full-Time",
+            "salary": 193067,
+            "currency": "USD"
+        },
+        "work_location": {
+            "nearest_office": "Paris Office",
+            "is_remote": false
+        },
+        "reporting_manager": "M987654",
+        "skills": [
+            "SQL",
+            "Kubernetes",
+            "Python",
+            "Django"
+        ],
+        "performance_reviews": [
+            {
+                "review_date": "2020-08-20",
+                "rating": 4.5,
+                "comments": "Outstanding performance and dedication."
+            },
+            {
+                "review_date": "2020-02-27",
+                "rating": 4.5,
+                "comments": "Consistently meets performance standards."
+            }
+        ],
+        "benefits": {
+            "health_insurance": "Bronze Plan",
+            "retirement_plan": "401K",
+            "paid_time_off": 30
+        },
+        "emergency_contact": {
+            "name": "Robert Johnson",
+            "relationship": "Parent",
+            "phone_number": "+1-555-789-5758"
+        },
+        "notes": "Completed leadership training in 2021."
+    },
+    {
+        "employee_id": "E123457",
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "gender": "Male",
+        "date_of_birth": "1980-08-01",
+        "address": {
+            "street": "775 Main Street",
+            "city": "Springfield",
+            "state": "IL",
+            "postal_code": "62704",
+            "country": "USA"
+        },
+        "contact_details": {
+            "email": "jane.doe@example.com",
+            "phone_number": "+1-555-889-2929"
+        },
+        "job_details": {
+            "job_title": "Senior Software Engineer",
+            "department": "IT",
+            "hire_date": "2011-12-08",
+            "employment_type": "Full-Time",
+            "salary": 121212,
+            "currency": "USD"
+        },
+        "work_location": {
+            "nearest_office": "New York Office",
+            "is_remote": false
+        },
+        "reporting_manager": "M987654",
+        "skills": [
+            "Flask",
+            "React",
+            "Python",
+            "AWS"
+        ],
+        "performance_reviews": [
+            {
+                "review_date": "2021-12-19",
+                "rating": 4.2,
+                "comments": "Needs improvement in time management."
+            },
+            {
+                "review_date": "2022-01-04",
+                "rating": 4.5,
+                "comments": "Consistently meets performance standards."
+            }
+        ],
+        "benefits": {
+            "health_insurance": "Bronze Plan",
+            "retirement_plan": "401K",
+            "paid_time_off": 23
+        },
+        "emergency_contact": {
+            "name": "Michael Doe",
+            "relationship": "Friend",
+            "phone_number": "+1-555-867-9284"
+        },
+        "notes": "Promoted to Senior Software Engineer in 2020."
+    },
+    {
+        "employee_id": "E123458",
+        "first_name": "Emily",
+        "last_name": "Smith",
+        "gender": "Male",
+        "date_of_birth": "1989-12-06",
+        "address": {
+            "street": "543 Main Street",
+            "city": "Springfield",
+            "state": "IL",
+            "postal_code": "62704",
+            "country": "USA"
+        },
+        "contact_details": {
+            "email": "emily.smith@example.com",
+            "phone_number": "+1-555-886-8396"
+        },
+        "job_details": {
+            "job_title": "Data Scientist",
+            "department": "Data Science",
+            "hire_date": "2000-12-09",
+            "employment_type": "Full-Time",
+            "salary": 128926,
+            "currency": "USD"
+        },
+        "work_location": {
+            "nearest_office": "Chicago Office",
+            "is_remote": false
+        },
+        "reporting_manager": "M987655",
+        "skills": [
+            "Django",
+            "Python",
+            "SQL",
+            "AWS"
+        ],
+        "performance_reviews": [
+            {
+                "review_date": "2022-02-18",
+                "rating": 3.8,
+                "comments": "Outstanding performance and dedication."
+            },
+            {
+                "review_date": "2019-04-15",
+                "rating": 3.3,
+                "comments": "Outstanding performance and dedication."
+            }
+        ],
+        "benefits": {
+            "health_insurance": "Silver Plan",
+            "retirement_plan": "401K",
+            "paid_time_off": 17
+        },
+        "emergency_contact": {
+            "name": "Jane Johnson",
+            "relationship": "Friend",
+            "phone_number": "+1-555-497-5676"
+        },
+        "notes": "Received Employee of the Month award in 2022."
+    },
+    {
+        "employee_id": "E123459",
+        "first_name": "Michael",
+        "last_name": "Brown",
+        "gender": "Male",
+        "date_of_birth": "1962-02-19",
+        "address": {
+            "street": "700 Main Street",
+            "city": "Springfield",
+            "state": "IL",
+            "postal_code": "62704",
+            "country": "USA"
+        },
+        "contact_details": {
+            "email": "michael.brown@example.com",
+            "phone_number": "+1-555-645-8381"
+        },
+        "job_details": {
+            "job_title": "Product Manager",
+            "department": "Product",
+            "hire_date": "2014-10-11",
+            "employment_type": "Full-Time",
+            "salary": 211311,
+            "currency": "USD"
+        },
+        "work_location": {
+            "nearest_office": "New York Office",
+            "is_remote": false
+        },
+        "reporting_manager": "M987656",
+        "skills": [
+            "Node.js",
+            "SQL",
+            "AWS",
+            "React"
+        ],
+        "performance_reviews": [
+            {
+                "review_date": "2023-03-03",
+                "rating": 3.4,
+                "comments": "Needs improvement in time management."
+            },
+            {
+                "review_date": "2021-06-13",
+                "rating": 3.4,
+                "comments": "Needs improvement in time management."
+            }
+        ],
+        "benefits": {
+            "health_insurance": "Silver Plan",
+            "retirement_plan": "401K",
+            "paid_time_off": 28
+        },
+        "emergency_contact": {
+            "name": "Emily Johnson",
+            "relationship": "Parent",
+            "phone_number": "+1-555-791-3655"
+        },
+        "notes": "Completed leadership training in 2021."
+    },
+    {
+        "employee_id": "E123460",
+        "first_name": "Sarah",
+        "last_name": "Davis",
+        "gender": "Female",
+        "date_of_birth": "1956-05-04",
+        "address": {
+            "street": "222 Main Street",
+            "city": "Springfield",
+            "state": "IL",
+            "postal_code": "62704",
+            "country": "USA"
+        },
+        "contact_details": {
+            "email": "sarah.davis@example.com",
+            "phone_number": "+1-555-926-6715"
+        },
+        "job_details": {
+            "job_title": "Project Manager",
+            "department": "Project Management",
+            "hire_date": "2016-08-16",
+            "employment_type": "Full-Time",
+            "salary": 234925,
+            "currency": "USD"
+        },
+        "work_location": {
+            "nearest_office": "Chicago Office",
+            "is_remote": false
+        },
+        "reporting_manager": "M987657",
+        "skills": [
+            "Django",
+            "Docker",
+            "Flask",
+            "AWS"
+        ],
+        "performance_reviews": [
+            {
+                "review_date": "2023-07-01",
+                "rating": 4.9,
+                "comments": "Consistently meets performance standards."
+            },
+            {
+                "review_date": "2022-04-22",
+                "rating": 3.3,
+                "comments": "Outstanding performance and dedication."
+            }
+        ],
+        "benefits": {
+            "health_insurance": "Bronze Plan",
+            "retirement_plan": "401K",
+            "paid_time_off": 20
+        },
+        "emergency_contact": {
+            "name": "Jane Smith",
+            "relationship": "Parent",
+            "phone_number": "+1-555-355-6190"
+        },
+        "notes": "Actively involved in company hackathons and innovation challenges."
+    },
+    {
+        "employee_id": "E123461",
+        "first_name": "Robert",
+        "last_name": "Johnson",
+        "gender": "Male",
+        "date_of_birth": "1968-05-23",
+        "address": {
+            "street": "176 Main Street",
+            "city": "Springfield",
+            "state": "IL",
+            "postal_code": "62704",
+            "country": "USA"
+        },
+        "contact_details": {
+            "email": "robert.johnson@example.com",
+            "phone_number": "+1-555-435-3169"
+        },
+        "job_details": {
+            "job_title": "UX Designer",
+            "department": "Design",
+            "hire_date": "2003-02-01",
+            "employment_type": "Full-Time",
+            "salary": 153045,
+            "currency": "USD"
+        },
+        "work_location": {
+            "nearest_office": "Tokyo Office",
+            "is_remote": true
+        },
+        "reporting_manager": "M987658",
+        "skills": [
+            "Flask",
+            "SQL",
+            "Kubernetes",
+            "Python"
+        ],
+        "performance_reviews": [
+            {
+                "review_date": "2021-06-13",
+                "rating": 3.7,
+                "comments": "Outstanding performance and dedication."
+            },
+            {
+                "review_date": "2019-04-23",
+                "rating": 4.6,
+                "comments": "Outstanding performance and dedication."
+            }
+        ],
+        "benefits": {
+            "health_insurance": "Bronze Plan",
+            "retirement_plan": "401K",
+            "paid_time_off": 15
+        },
+        "emergency_contact": {
+            "name": "Emily Johnson",
+            "relationship": "Spouse",
+            "phone_number": "+1-555-300-1185"
+        },
+        "notes": "Actively involved in company hackathons and innovation challenges."
+    },
+    {
+        "employee_id": "E123462",
+        "first_name": "David",
+        "last_name": "Wilson",
+        "gender": "Male",
+        "date_of_birth": "1985-01-09",
+        "address": {
+            "street": "999 Main Street",
+            "city": "Springfield",
+            "state": "IL",
+            "postal_code": "62704",
+            "country": "USA"
+        },
+        "contact_details": {
+            "email": "david.wilson@example.com",
+            "phone_number": "+1-555-654-8974"
+        },
+        "job_details": {
+            "job_title": "QA Engineer",
+            "department": "Quality Assurance",
+            "hire_date": "2015-10-02",
+            "employment_type": "Full-Time",
+            "salary": 217653,
+            "currency": "USD"
+        },
+        "work_location": {
+            "nearest_office": "London Office",
+            "is_remote": true
+        },
+        "reporting_manager": "M987659",
+        "skills": [
+            "React",
+            "JavaScript",
+            "SQL",
+            "Flask"
+        ],
+        "performance_reviews": [
+            {
+                "review_date": "2020-07-12",
+                "rating": 4.2,
+                "comments": "Exceeded expectations in the last project."
+            },
+            {
+                "review_date": "2022-07-05",
+                "rating": 3.7,
+                "comments": "Needs improvement in time management."
+            }
+        ],
+        "benefits": {
+            "health_insurance": "Silver Plan",
+            "retirement_plan": "401K",
+            "paid_time_off": 19
+        },
+        "emergency_contact": {
+            "name": "Emily Doe",
+            "relationship": "Spouse",
+            "phone_number": "+1-555-722-5242"
+        },
+        "notes": "Actively involved in company hackathons and innovation challenges."
+    },
+    {
+        "employee_id": "E123463",
+        "first_name": "Chris",
+        "last_name": "Lee",
+        "gender": "Female",
+        "date_of_birth": "1966-09-21",
+        "address": {
+            "street": "538 Main Street",
+            "city": "Springfield",
+            "state": "IL",
+            "postal_code": "62704",
+            "country": "USA"
+        },
+        "contact_details": {
+            "email": "chris.lee@example.com",
+            "phone_number": "+1-555-637-4432"
+        },
+        "job_details": {
+            "job_title": "DevOps Engineer",
+            "department": "Operations",
+            "hire_date": "2013-01-10",
+            "employment_type": "Full-Time",
+            "salary": 88726,
+            "currency": "USD"
+        },
+        "work_location": {
+            "nearest_office": "Toronto Office",
+            "is_remote": false
+        },
+        "reporting_manager": "M987660",
+        "skills": [
+            "Flask",
+            "Python",
+            "Docker",
+            "SQL"
+        ],
+        "performance_reviews": [
+            {
+                "review_date": "2020-04-28",
+                "rating": 4.4,
+                "comments": "Needs improvement in time management."
+            },
+            {
+                "review_date": "2021-04-05",
+                "rating": 3.5,
+                "comments": "Exceeded expectations in the last project."
+            }
+        ],
+        "benefits": {
+            "health_insurance": "Bronze Plan",
+            "retirement_plan": "401K",
+            "paid_time_off": 30
+        },
+        "emergency_contact": {
+            "name": "Emily Smith",
+            "relationship": "Sibling",
+            "phone_number": "+1-555-620-9529"
+        },
+        "notes": "Received Employee of the Month award in 2022."
+    },
+    {
+        "employee_id": "E123464",
+        "first_name": "Sophia",
+        "last_name": "Garcia",
+        "gender": "Female",
+        "date_of_birth": "1971-04-07",
+        "address": {
+            "street": "105 Main Street",
+            "city": "Springfield",
+            "state": "IL",
+            "postal_code": "62704",
+            "country": "USA"
+        },
+        "contact_details": {
+            "email": "sophia.garcia@example.com",
+            "phone_number": "+1-555-910-2054"
+        },
+        "job_details": {
+            "job_title": "CTO",
+            "department": "Executive",
+            "hire_date": "2020-10-04",
+            "employment_type": "Full-Time",
+            "salary": 134948,
+            "currency": "USD"
+        },
+        "work_location": {
+            "nearest_office": "San Francisco Office",
+            "is_remote": true
+        },
+        "reporting_manager": null,
+        "skills": [
+            "Django",
+            "SQL",
+            "React",
+            "Flask"
+        ],
+        "performance_reviews": [
+            {
+                "review_date": "2020-04-21",
+                "rating": 3.7,
+                "comments": "Needs improvement in time management."
+            },
+            {
+                "review_date": "2019-06-14",
+                "rating": 4.5,
+                "comments": "Outstanding performance and dedication."
+            }
+        ],
+        "benefits": {
+            "health_insurance": "Bronze Plan",
+            "retirement_plan": "401K",
+            "paid_time_off": 26
+        },
+        "emergency_contact": {
+            "name": "Jane Smith",
+            "relationship": "Parent",
+            "phone_number": "+1-555-819-1989"
+        },
+        "notes": "Completed leadership training in 2021."
+    },
+    {
+        "employee_id": "E123465",
+        "first_name": "Olivia",
+        "last_name": "Martinez",
+        "gender": "Female",
+        "date_of_birth": "1963-06-14",
+        "address": {
+            "street": "187 Main Street",
+            "city": "Springfield",
+            "state": "IL",
+            "postal_code": "62704",
+            "country": "USA"
+        },
+        "contact_details": {
+            "email": "olivia.martinez@example.com",
+            "phone_number": "+1-555-522-6568"
+        },
+        "job_details": {
+            "job_title": "CEO",
+            "department": "Executive",
+            "hire_date": "2017-02-21",
+            "employment_type": "Full-Time",
+            "salary": 90282,
+            "currency": "USD"
+        },
+        "work_location": {
+            "nearest_office": "Sydney Office",
+            "is_remote": false
+        },
+        "reporting_manager": null,
+        "skills": [
+            "React",
+            "AWS",
+            "Node.js",
+            "Django"
+        ],
+        "performance_reviews": [
+            {
+                "review_date": "2023-11-16",
+                "rating": 3.3,
+                "comments": "Outstanding performance and dedication."
+            },
+            {
+                "review_date": "2021-11-13",
+                "rating": 3.3,
+                "comments": "Consistently meets performance standards."
+            }
+        ],
+        "benefits": {
+            "health_insurance": "Bronze Plan",
+            "retirement_plan": "401K",
+            "paid_time_off": 27
+        },
+        "emergency_contact": {
+            "name": "Michael Smith",
+            "relationship": "Parent",
+            "phone_number": "+1-555-985-3901"
+        },
+        "notes": "Actively involved in company hackathons and innovation challenges."
+    }
+]
