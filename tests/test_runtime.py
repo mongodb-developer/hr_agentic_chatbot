@@ -18,7 +18,22 @@ class RuntimeTest(unittest.TestCase):
                 self.collection_name = collection_name
 
         histories.MongoDBChatMessageHistory = MongoDBChatMessageHistory
+        sys.modules["langchain_mongodb"] = types.ModuleType("langchain_mongodb")
         sys.modules["langchain_mongodb.chat_message_histories"] = histories
+
+        dotenv = types.ModuleType("dotenv")
+        dotenv.load_dotenv = lambda *a, **kw: None
+        sys.modules["dotenv"] = dotenv
+
+        class MongoClient:
+            def __init__(self, *a, **kw):
+                self.admin = types.SimpleNamespace(command=lambda c: {"ok": 1})
+            def close(self): pass
+        pymongo_client_mod = types.ModuleType("pymongo.mongo_client")
+        pymongo_client_mod.MongoClient = MongoClient
+        sys.modules["pymongo"] = types.ModuleType("pymongo")
+        sys.modules["pymongo"].MongoClient = MongoClient
+        sys.modules["pymongo.mongo_client"] = pymongo_client_mod
 
         target = Path(__file__).resolve().parents[1] / "mongodb" / "connect.py"
         spec = importlib.util.spec_from_file_location("hr_connect", target)
