@@ -14,7 +14,7 @@ from langgraph.checkpoint.base import (
     SerializerProtocol,
 )
 from langgraph.serde.jsonplus import JsonPlusSerializer
-from motor.motor_asyncio import AsyncIOMotorClient
+from pymongo import AsyncMongoClient
 
 class JsonPlusSerializerCompat(JsonPlusSerializer):
     def loads(self, data: bytes) -> Any:
@@ -25,13 +25,13 @@ class JsonPlusSerializerCompat(JsonPlusSerializer):
 class MongoDBSaver(AbstractContextManager, BaseCheckpointSaver):
     serde = JsonPlusSerializerCompat()
 
-    client: AsyncIOMotorClient
+    client: AsyncMongoClient
     db_name: str
     collection_name: str
 
     def __init__(
         self,
-        client: AsyncIOMotorClient,
+        client: AsyncMongoClient,
         db_name: str,
         collection_name: str,
         *,

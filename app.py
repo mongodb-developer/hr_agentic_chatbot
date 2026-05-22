@@ -10,7 +10,7 @@ from agent import create_agent
 from graph import create_workflow, AgentState
 from mongodb.connect import get_mongo_client
 from mongodb import checkpointer
-from motor.motor_asyncio import AsyncIOMotorClient
+from pymongo import AsyncMongoClient
 from langchain_core.messages import HumanMessage, AIMessage
 from utilities import sanitize_name
 from langchain.schema.runnable import Runnable
@@ -41,7 +41,7 @@ async def on_chat_start():
 
     workflow = create_workflow(chatbot_agent, tools)
 
-    mongo_client = AsyncIOMotorClient(MONGO_URI)
+    mongo_client = AsyncMongoClient(MONGO_URI)
     mongodb_checkpointer = checkpointer.MongoDBSaver(mongo_client, DATABASE_NAME, "checkpoints_collection")
 
     graph = workflow.compile(checkpointer=mongodb_checkpointer)

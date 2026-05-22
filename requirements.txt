@@ -53,7 +53,6 @@ langsmith==0.1.84
 Lazify==0.4.0
 literalai==0.0.607
 marshmallow==3.21.3
-motor==3.5.1
 multidict==6.0.5
 mypy-extensions==1.0.0
 nest-asyncio==1.6.0
@@ -77,7 +76,7 @@ pyasn1_modules==0.4.0
 pydantic==2.8.2
 pydantic_core==2.20.1
 PyJWT==2.8.0
-pymongo==4.8.0
+pymongo==4.13.1
 pyparsing==3.1.2
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
